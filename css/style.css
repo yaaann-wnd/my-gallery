@@ -5,7 +5,7 @@
 }
 
 body {
-    height: 100vh;
+    height: 100svh;
     background-color: #333;
     display: flex;
     align-items: center;
