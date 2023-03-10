@@ -11,6 +11,8 @@ body {
     background-color: #333;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    gap: 3rem;
     justify-content: center;
     font-family: 'Lato', sans-serif;
 }
@@ -22,16 +24,19 @@ body {
     transition: 200ms ease-in-out;
 }
 
+.wrapper, .cube {
+    border-radius: 10px;
+}
+
 .wrapper {
     height: 300px;
     width: 220px;
     background: rgb(80, 180, 166);
-    border-radius: 10px;
     transition: 200ms ease-in-out;
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    transition: transform 200ms ease-in-out;
+    transition: 200ms ease-in-out;
 
     user-select: none;
     -webkit-user-select: none;
@@ -79,7 +84,6 @@ body {
     left: 0;
     height: 100%;
     width: 100%;
-    border-radius: 10px;
     transition: 200ms ease-in-out;
 }
 
@@ -90,24 +94,40 @@ body {
 
 .cube-sky {
     z-index: -2;
-    border:2px solid #9ed8db;    
+    background-color: #6200b3;
+    transition-delay: 100ms;    
+}
+
+.cube-white {
+    z-index: -3;
+    background-color: #efc3e6;    
+    transition-delay: 100ms;    
 }
 
 .wrapper:hover {
     transform: translate(5px, -5px);
+    border-radius: 0;
+}
+
+.wrapper:hover ~ .cube {
+    border-radius: 0;
 }
 
 .wrapper:hover ~ .cube-salmon {
-    transform: translate(-3px, 3px);
+    transform: translate(-1, 1px);
 
 }
+
 .wrapper:hover ~ .cube-sky {
+    transform: translate(-6px, 6px);
+}
+
+.wrapper:hover ~ .cube-white {
     transform: translate(-11px, 11px);
 }
 
 .wrapper:hover img {
     opacity: 1;
-    transform: scale(1.1);
 }
 
 .wrapper:hover::before {
