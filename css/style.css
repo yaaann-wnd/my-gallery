@@ -71,7 +71,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center 0;
     border-radius: inherit;
     opacity: 0;
     transition: opacity 200ms ease-in-out, transform 700ms ease-in-out;
